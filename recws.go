@@ -62,6 +62,7 @@ type RecConn struct {
 // CloseAndReconnect will try to reconnect.
 func (rc *RecConn) CloseAndReconnect() {
 	rc.Close()
+	<-rc.close
 	go rc.connect()
 }
 
@@ -293,7 +294,7 @@ func (rc *RecConn) Dial(urlStr string, reqHeader http.Header) {
 
 	// Close channel
 	rc.close = make(chan bool, 1)
-	
+
 	// Config
 	rc.setURL(urlStr)
 	rc.setReqHeader(reqHeader)
