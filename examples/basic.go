@@ -2,9 +2,10 @@ package main
 
 import (
 	"context"
-	"github.com/Bitcopy/recws"
 	"log"
 	"time"
+
+	"github.com/Bitcopy/recws"
 )
 
 func main() {

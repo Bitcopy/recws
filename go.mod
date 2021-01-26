@@ -1,4 +1,4 @@
-module github.com/Bybit/recws
+module github.com/Bitcopy/recws
 
 go 1.13
 
